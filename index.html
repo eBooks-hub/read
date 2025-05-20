@@ -27,7 +27,7 @@
 
     .books {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 20px;
       padding: 20px;
       max-width: 1100px;
@@ -39,7 +39,6 @@
       border-radius: 10px;
       padding: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: transform 0.2s;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -53,7 +52,8 @@
       width: 100%;
       height: auto;
       border-radius: 5px;
-      cursor: pointer;
+      aspect-ratio: 3/4;
+      object-fit: cover;
     }
 
     .book-title {
@@ -92,15 +92,16 @@
       justify-content: center;
       align-items: center;
       z-index: 9999;
+      padding: 20px;
     }
 
     .popup iframe {
       width: 90vw;
       height: 90vh;
-      border: none;
-      border-radius: 10px;
       max-width: 700px;
       max-height: 650px;
+      border: none;
+      border-radius: 10px;
     }
 
     .close {
@@ -110,6 +111,7 @@
       font-size: 30px;
       color: #fff;
       cursor: pointer;
+      z-index: 10000;
     }
 
     @media (max-width: 768px) {
@@ -127,8 +129,8 @@
       }
 
       .popup iframe {
-        max-width: 90vw;
-        max-height: 90vh;
+        width: 95vw;
+        height: 85vh;
       }
     }
 
