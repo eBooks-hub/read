@@ -3,93 +3,122 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free Book Downloads</title>
+  <title>Unlock Bestselling eBooks</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #041d42, #072c61);
+      color: white;
       text-align: center;
+      padding: 40px 20px;
     }
+
     h1 {
+      font-size: 2rem;
       margin-bottom: 10px;
     }
+
+    p {
+      font-size: 1.1rem;
+      color: #d1d1d1;
+      margin-bottom: 40px;
+    }
+
     .book-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-bottom: 40px;
     }
+
     .book {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .book:hover {
-      transform: translateY(-5px);
-    }
+
     .book img {
-      width: 100%;
-      height: auto;
+      width: 120px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
-    .book-title {
-      padding: 10px;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .access-btn {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
-      background-color: #ff6600;
+
+    .download-btn {
+      margin-top: 10px;
+      background-color: #002b5c;
       color: white;
-      font-size: 16px;
+      border: none;
+      padding: 10px 16px;
       border-radius: 6px;
-      text-decoration: none;
-      transition: background 0.3s ease;
+      cursor: pointer;
+      font-weight: 500;
+      transition: background-color 0.3s;
     }
-    .access-btn:hover {
-      background-color: #e65c00;
+
+    .download-btn:hover {
+      background-color: #004999;
+    }
+
+    .cta-box {
+      background-color: #0b2c58;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .cta-box button {
+      margin-top: 20px;
+      background-color: #ff7a2f;
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .cta-box button:hover {
+      background-color: #e0641c;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Top 5 Life-Changing Books</h1>
-    <p>Download your favorite book below</p>
-    
-    <div class="book-grid">
-      <div class="book">
-        <img src="https://i.postimg.cc/15ZPHyBQ/IMG-4454.jpg" alt="Atomic Habits">
-        <div class="book-title">Atomic Habits</div>
-      </div>
-      <div class="book">
-        <img src="https://i.postimg.cc/9M75dkq0/IMG-4455.jpg" alt="Rich Dad Poor Dad">
-        <div class="book-title">Rich Dad Poor Dad</div>
-      </div>
-      <div class="book">
-        <img src="https://i.postimg.cc/qvMPbqC9/IMG-4456.jpg" alt="The Psychology of Money">
-        <div class="book-title">The Psychology of Money</div>
-      </div>
-      <div class="book">
-        <img src="https://i.postimg.cc/MHmLtJZ6/IMG-4457.jpg" alt="Can't Hurt Me">
-        <div class="book-title">Can't Hurt Me</div>
-      </div>
-      <div class="book">
-        <img src="https://i.postimg.cc/MHmLtJZ6/IMG-4457.jpg" alt="Think and Grow Rich">
-        <div class="book-title">Think and Grow Rich</div>
-      </div>
-    </div>
+  <h1>Unlock Bestselling eBooks</h1>
+  <p>Get free full access to powerful bestselling books to change your life.</p>
 
-    <a class="access-btn" href="https://your-locker-link.com">Access Books</a>
+  <div class="book-grid">
+    <div class="book">
+      <img src="https://i.ibb.co/KHGGbh4/IMG-4454.jpg" alt="Atomic Habits" />
+      <button class="download-btn">Download</button>
+    </div>
+    <div class="book">
+      <img src="https://i.ibb.co/KHGGbh4/IMG-4455.jpg" alt="Rich Dad Poor Dad" />
+      <button class="download-btn">Download</button>
+    </div>
+    <div class="book">
+      <img src="https://i.ibb.co/cS2PbWL/IMG-4456.jpg" alt="The Psychology of Money" />
+      <button class="download-btn">Download</button>
+    </div>
+    <div class="book">
+      <img src="https://i.ibb.co/WW8L95P/IMG-4457.jpg" alt="Can't Hurt Me" />
+      <button class="download-btn">Download</button>
+    </div>
+    <div class="book">
+      <img src="https://i.ibb.co/d4X0npB/IMG-4458.jpg" alt="Think and Grow Rich" />
+      <button class="download-btn">Download</button>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <p>Complete one task to unlock your full book download.</p>
+    <button>Unlock Now</button>
   </div>
 </body>
 </html>
