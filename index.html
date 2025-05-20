@@ -26,20 +26,23 @@
     }
 
     .books {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .book {
-      width: 180px;
       background-color: #1a1a1a;
       border-radius: 10px;
       padding: 15px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
       transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .book:hover {
@@ -54,9 +57,10 @@
     }
 
     .book-title {
-      margin: 12px 0;
+      margin: 12px 0 8px;
       font-weight: bold;
       font-size: 15px;
+      min-height: 40px;
     }
 
     .btn {
@@ -69,7 +73,6 @@
       cursor: pointer;
       transition: background-color 0.3s;
       text-decoration: none;
-      display: inline-block;
     }
 
     .btn:hover {
@@ -110,8 +113,8 @@
     }
 
     @media (max-width: 768px) {
-      .book {
-        width: 44%;
+      .books {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       h1 {
@@ -130,8 +133,12 @@
     }
 
     @media (max-width: 480px) {
-      .book {
-        width: 45%;
+      .book-title {
+        font-size: 14px;
+      }
+
+      .books {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -155,8 +162,8 @@
     </div>
 
     <div class="book">
-      <img src="https://i.ibb.co/b50tjJJR/IMG-4456.jpg" onclick="openLocker()" alt="Psychology of Money" />
-      <div class="book-title">Psychology of Money</div>
+      <img src="https://i.ibb.co/b50tjJJR/IMG-4456.jpg" onclick="openLocker()" alt="The Psychology of Money" />
+      <div class="book-title">The Psychology of Money</div>
       <button class="btn" onclick="openLocker()">Download</button>
     </div>
 
