@@ -3,84 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Free Bestselling eBooks</title>
+  <title>Free Bestseller eBooks</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #041935, #06274e);
-      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #001f3f, #003366);
+      color: #ffffff;
       text-align: center;
+      padding: 20px;
     }
     h1 {
-      margin-top: 40px;
-      font-size: 28px;
+      font-size: 2.2em;
+      margin-bottom: 10px;
     }
     p {
-      font-size: 16px;
-      color: #cccccc;
+      font-size: 1.1em;
+      margin-bottom: 30px;
     }
-    .book-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    .books {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 20px;
-      padding: 40px 20px 20px;
-      max-width: 900px;
-      margin: 0 auto;
+      margin-bottom: 40px;
     }
     .book {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      width: 150px;
     }
     .book img {
-      width: 120px;
+      width: 100%;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
-    .book button {
+    .book img:hover {
+      transform: scale(1.05);
+    }
+    .book-title {
       margin-top: 10px;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 8px;
       padding: 8px 16px;
-      background-color: #003366;
-      color: white;
+      font-size: 0.95em;
+      background-color: #ff6600;
+      color: #fff;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    .book button:hover {
-      background-color: #0055aa;
+    .btn:hover {
+      background-color: #e65c00;
+    }
+
+    /* Popup Locker */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .popup {
+      width: 90%;
+      max-width: 400px;
+      height: 600px;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+    }
+    .popup iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: #ff0000;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1001;
     }
   </style>
 </head>
 <body>
 
-  <h1>Free Bestselling eBooks</h1>
-  <p>Get full access to powerful bestselling books to change your life.</p>
+  <h1>Unlock Bestselling eBooks</h1>
+  <p>Get free full access to powerful bestselling books to upgrade your knowledge and mindset.</p>
 
-  <div class="book-grid">
+  <div class="books">
     <div class="book">
-      <img src="https://i.ibb.co/k2vLzHpb/IMG-4454.jpg" alt="Atomic Habits">
-      <button>Download</button>
+      <img src="https://i.ibb.co/k2vLzHpb/IMG-4454.jpg" onclick="showLocker()" alt="Atomic Habits" />
+      <div class="book-title">Atomic Habits</div>
+      <button class="btn" onclick="showLocker()">Download</button>
     </div>
     <div class="book">
-      <img src="https://i.ibb.co/yFtmP1z3/IMG-4455.jpg" alt="Rich Dad Poor Dad">
-      <button>Download</button>
+      <img src="https://i.ibb.co/yFtmP1z3/IMG-4455.jpg" onclick="showLocker()" alt="Rich Dad Poor Dad" />
+      <div class="book-title">Rich Dad Poor Dad</div>
+      <button class="btn" onclick="showLocker()">Download</button>
     </div>
     <div class="book">
-      <img src="https://i.ibb.co/b50tjJJR/IMG-4456.jpg" alt="The Psychology of Money">
-      <button>Download</button>
+      <img src="https://i.ibb.co/b50tjJJR/IMG-4456.jpg" onclick="showLocker()" alt="The Psychology of Money" />
+      <div class="book-title">The Psychology of Money</div>
+      <button class="btn" onclick="showLocker()">Download</button>
     </div>
     <div class="book">
-      <img src="https://i.ibb.co/cKHYwf9S/IMG-4457.jpg" alt="Can’t Hurt Me">
-      <button>Download</button>
+      <img src="https://i.ibb.co/cKHYwf9S/IMG-4457.jpg" onclick="showLocker()" alt="Can't Hurt Me" />
+      <div class="book-title">Can't Hurt Me</div>
+      <button class="btn" onclick="showLocker()">Download</button>
     </div>
     <div class="book">
-      <img src="https://i.ibb.co/20ZC0cSC/IMG-4458.jpg" alt="Think and Grow Rich">
-      <button>Download</button>
+      <img src="https://i.ibb.co/20ZC0cSC/IMG-4458.jpg" onclick="showLocker()" alt="Think and Grow Rich" />
+      <div class="book-title">Think and Grow Rich</div>
+      <button class="btn" onclick="showLocker()">Download</button>
     </div>
   </div>
+
+  <!-- Locker Popup -->
+  <div class="overlay" id="lockerOverlay">
+    <div class="popup">
+      <button class="close-btn" onclick="closeLocker()">×</button>
+      <iframe src="https://installchecker.com/cl/i/po82d5"></iframe>
+    </div>
+  </div>
+
+  <script>
+    function showLocker() {
+      document.getElementById("lockerOverlay").style.display = "flex";
+    }
+    function closeLocker() {
+      document.getElementById("lockerOverlay").style.display = "none";
+    }
+  </script>
 
 </body>
 </html>
