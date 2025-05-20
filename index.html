@@ -14,7 +14,7 @@
     }
 
     h1 {
-      font-size: 26px;
+      font-size: 28px;
       margin-top: 30px;
       padding: 0 10px;
     }
@@ -27,105 +27,118 @@
 
     .books {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 20px;
       padding: 20px;
-      max-width: 1200px;
-      margin: auto;
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
     .book {
       background-color: #1a1a1a;
       border-radius: 10px;
       padding: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: transform 0.2s;
       display: flex;
       flex-direction: column;
-      align-items: center;
+      justify-content: space-between;
+    }
+
+    .book:hover {
+      transform: scale(1.03);
     }
 
     .book img {
       width: 100%;
-      object-fit: contain;
+      height: auto;
       border-radius: 5px;
-      background-color: #000;
+      cursor: pointer;
     }
 
     .book-title {
-      margin: 10px 0 8px;
+      margin: 12px 0 8px;
       font-weight: bold;
-      font-size: 14px;
+      font-size: 15px;
       min-height: 40px;
     }
 
     .btn {
-      background-color: #ff6600;
+      background-color: #007bff;
       color: #fff;
       border: none;
       padding: 10px 20px;
       font-size: 14px;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s;
       text-decoration: none;
-      transition: 0.3s;
     }
 
     .btn:hover {
-      background-color: #e65c00;
+      background-color: #0056b3;
     }
 
-    /* LOCKER POPUP */
-    .overlay {
+    /* Popup Locker */
+    .popup {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(6px);
       justify-content: center;
       align-items: center;
       z-index: 9999;
     }
 
-    .popup {
-      width: 90%;
-      max-width: 420px;
-      height: 85vh;
-      background: #fff;
-      position: relative;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
     .popup iframe {
-      flex: 1;
-      width: 100%;
+      width: 90vw;
+      height: 90vh;
       border: none;
+      border-radius: 10px;
+      max-width: 700px;
+      max-height: 650px;
     }
 
     .close {
       position: absolute;
-      top: 8px;
-      right: 12px;
-      background: #000;
-      color: white;
-      border: none;
-      font-size: 18px;
-      border-radius: 50%;
-      width: 30px;
-      height: 30px;
+      top: 15px;
+      right: 20px;
+      font-size: 30px;
+      color: #fff;
       cursor: pointer;
-      z-index: 10000;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       .books {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .book img {
-        aspect-ratio: 2/3;
+      h1 {
+        font-size: 22px;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 8px 14px;
+      }
+
+      .popup iframe {
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .book-title {
+        font-size: 14px;
+      }
+
+      .books {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   </style>
@@ -136,46 +149,49 @@
   <p>Download life-changing eBooks that will upgrade your mindset, wealth, and success—completely free.</p>
 
   <div class="books">
-    <div class="book" onclick="showLocker()">
-      <img src="https://i.postimg.cc/Bnz7LStf/atomic.jpg" alt="Atomic Habits" />
+    <div class="book">
+      <img src="https://i.ibb.co/k2vLzHpb/IMG-4454.jpg" onclick="openLocker()" alt="Atomic Habits" />
       <div class="book-title">Atomic Habits</div>
-      <button class="btn">Download</button>
+      <button class="btn" onclick="openLocker()">Download</button>
     </div>
-    <div class="book" onclick="showLocker()">
-      <img src="https://i.postimg.cc/NFjK2tZK/richdad.jpg" alt="Rich Dad Poor Dad" />
+
+    <div class="book">
+      <img src="https://i.ibb.co/yFtmP1z3/IMG-4455.jpg" onclick="openLocker()" alt="Rich Dad Poor Dad" />
       <div class="book-title">Rich Dad Poor Dad</div>
-      <button class="btn">Download</button>
+      <button class="btn" onclick="openLocker()">Download</button>
     </div>
-    <div class="book" onclick="showLocker()">
-      <img src="https://i.postimg.cc/v8t6CJc6/psych.jpg" alt="The Psychology of Money" />
+
+    <div class="book">
+      <img src="https://i.ibb.co/b50tjJJR/IMG-4456.jpg" onclick="openLocker()" alt="The Psychology of Money" />
       <div class="book-title">The Psychology of Money</div>
-      <button class="btn">Download</button>
+      <button class="btn" onclick="openLocker()">Download</button>
     </div>
-    <div class="book" onclick="showLocker()">
-      <img src="https://i.postimg.cc/d0fJPGsw/cant.jpg" alt="Can't Hurt Me" />
-      <div class="book-title">Can’t Hurt Me</div>
-      <button class="btn">Download</button>
+
+    <div class="book">
+      <img src="https://i.ibb.co/cKHYwf9S/IMG-4457.jpg" onclick="openLocker()" alt="Can't Hurt Me" />
+      <div class="book-title">Can't Hurt Me</div>
+      <button class="btn" onclick="openLocker()">Download</button>
     </div>
-    <div class="book" onclick="showLocker()">
-      <img src="https://i.postimg.cc/3JXjFHzL/think.jpg" alt="Think and Grow Rich" />
+
+    <div class="book">
+      <img src="https://i.ibb.co/20ZC0cSC/IMG-4458.jpg" onclick="openLocker()" alt="Think and Grow Rich" />
       <div class="book-title">Think and Grow Rich</div>
-      <button class="btn">Download</button>
+      <button class="btn" onclick="openLocker()">Download</button>
     </div>
   </div>
 
-  <div class="overlay" id="locker">
-    <div class="popup">
-      <button class="close" onclick="closeLocker()">❌</button>
-      <iframe src="https://installchecker.com/cl/i/po82d5"></iframe>
-    </div>
+  <div class="popup" id="popup">
+    <div class="close" onclick="closeLocker()">×</div>
+    <iframe src="https://installchecker.com/cl/i/po82d5" allowfullscreen></iframe>
   </div>
 
   <script>
-    function showLocker() {
-      document.getElementById("locker").style.display = "flex";
+    function openLocker() {
+      document.getElementById("popup").style.display = "flex";
     }
+
     function closeLocker() {
-      document.getElementById("locker").style.display = "none";
+      document.getElementById("popup").style.display = "none";
     }
   </script>
 
