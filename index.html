@@ -92,12 +92,12 @@
     }
 
     .popup iframe {
-      width: 90%;
-      height: 90%;
+      width: 90vw;
+      height: 90vh;
       border: none;
       border-radius: 10px;
-      max-width: 500px;
-      max-height: 600px;
+      max-width: 700px;
+      max-height: 650px;
     }
 
     .close {
@@ -109,7 +109,7 @@
       cursor: pointer;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 768px) {
       .book {
         width: 44%;
       }
@@ -121,6 +121,17 @@
       .btn {
         font-size: 13px;
         padding: 8px 14px;
+      }
+
+      .popup iframe {
+        max-width: 90vw;
+        max-height: 90vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .book {
+        width: 45%;
       }
     }
   </style>
