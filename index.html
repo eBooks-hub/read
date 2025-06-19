@@ -8,8 +8,8 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #111;
-      color: #fff;
+      background-color: #f5f7fa;
+      color: #222;
       text-align: center;
     }
 
@@ -17,12 +17,14 @@
       font-size: 28px;
       margin-top: 30px;
       padding: 0 10px;
+      color: #222;
     }
 
     p {
-      font-size: 16px;
-      color: #bbb;
-      margin: 10px 20px 30px;
+      font-size: 18px;
+      color: #444;
+      max-width: 720px;
+      margin: 0 auto 20px;
     }
 
     .books {
@@ -35,10 +37,10 @@
     }
 
     .book {
-      background-color: #1a1a1a;
+      background-color: #ffffff;
       border-radius: 10px;
       padding: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       transition: transform 0.2s;
       display: flex;
       flex-direction: column;
@@ -68,18 +70,20 @@
       color: #fff;
       border: none;
       padding: 10px 20px;
-      font-size: 14px;
-      border-radius: 5px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: all 0.3s ease;
       text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,123,255,0.3);
     }
 
     .btn:hover {
       background-color: #0056b3;
+      transform: scale(1.05);
     }
 
-    /* Popup Locker */
     .popup {
       display: none;
       position: fixed;
@@ -141,7 +145,6 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      /* ✅ Mobile image format fix */
       .book img {
         height: 200px;
         object-fit: cover;
@@ -151,38 +154,38 @@
 </head>
 <body>
 
-  <h1>Get Instant Access to the World’s Most Powerful Self-Help Books</h1>
-  <p>Download life-changing eBooks that will upgrade your mindset, wealth, and success—completely free.</p>
+  <h1>Unlock Life-Changing Self-Help Books</h1>
+  <p>Discover the most impactful books on mindset, money, focus, and personal growth. Get your free digital collection now.</p>
 
   <div class="books">
     <div class="book">
       <img src="https://i.ibb.co/k2vLzHpb/IMG-4454.jpg" onclick="openLocker()" alt="Atomic Habits" />
       <div class="book-title">Atomic Habits</div>
-      <button class="btn" onclick="openLocker()">Download</button>
+      <button class="btn" onclick="openLocker()">Download Now</button>
     </div>
 
     <div class="book">
       <img src="https://i.ibb.co/yFtmP1z3/IMG-4455.jpg" onclick="openLocker()" alt="Rich Dad Poor Dad" />
       <div class="book-title">Rich Dad Poor Dad</div>
-      <button class="btn" onclick="openLocker()">Download</button>
+      <button class="btn" onclick="openLocker()">Download Now</button>
     </div>
 
     <div class="book">
       <img src="https://i.ibb.co/b50tjJJR/IMG-4456.jpg" onclick="openLocker()" alt="The Psychology of Money" />
       <div class="book-title">The Psychology of Money</div>
-      <button class="btn" onclick="openLocker()">Download</button>
+      <button class="btn" onclick="openLocker()">Download Now</button>
     </div>
 
     <div class="book">
       <img src="https://i.ibb.co/cKHYwf9S/IMG-4457.jpg" onclick="openLocker()" alt="Can't Hurt Me" />
       <div class="book-title">Can't Hurt Me</div>
-      <button class="btn" onclick="openLocker()">Download</button>
+      <button class="btn" onclick="openLocker()">Download Now</button>
     </div>
 
     <div class="book">
       <img src="https://i.ibb.co/20ZC0cSC/IMG-4458.jpg" onclick="openLocker()" alt="Think and Grow Rich" />
       <div class="book-title">Think and Grow Rich</div>
-      <button class="btn" onclick="openLocker()">Download</button>
+      <button class="btn" onclick="openLocker()">Download Now</button>
     </div>
   </div>
 
